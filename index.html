@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Algebra Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="bg-gray-900 min-h-screen flex flex-col items-center text-white">
+    <!-- Header -->
+    <header class="bg-blue-800 w-full text-white py-4 text-center">
+        <h1 class="text-3xl font-bold sm:text-4xl">Linear Algebra Calculator</h1>
+        <p class="text-lg mt-2 sm:text-xl">Solve a variety of linear algebra problems dynamically</p>
+    </header>
+
+    <!-- Main Section -->
+    <main class="mt-8 w-full max-w-3xl bg-gray-800 shadow-md rounded-lg p-6 sm:px-8 sm:py-10">
+        <!-- Dropdown for Operation Selection -->
+        <div class="mb-6">
+            <label for="operation" class="block text-lg font-medium text-gray-300 mb-2">Select Operation:</label>
+            <select id="operation" 
+                    class="w-full p-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 text-white transition-colors duration-300 hover:bg-gray-600">
+                <option value="Select Operation">Select Operation</option>
+                <option value="determinant">Determinant</option>
+                <option value="transpose">Transpose</option>
+                <option value="rref">RREF</option>
+                <option value="rank">Rank</option>
+                <option value="inverse">Inverse</option>
+                <option value="dotProduct">Dot Product</option>
+                <option value="crossProduct">Cross Product</option>
+            </select>
+        </div>
+
+        <!-- Input Section -->
+        <div id="input-section" class="mb-6">
+            <label for="input" class="block text-lg font-medium text-gray-300 mb-2">Enter your input:</label>
+            <textarea id="input" 
+                      class="w-full p-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 text-white transition-colors duration-300 hover:bg-gray-600"
+                      rows="5" 
+                      placeholder="Enter your matrix or vectors (comma-separated)."></textarea>
+        </div>
+
+        <!-- Calculate Button -->
+        <button id="calculate-btn" 
+                class="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition-colors duration-300">
+            Calculate
+        </button>
+
+        <!-- Output Section -->
+        <div id="output-section" class="mt-6">
+            <h2 class="text-lg font-semibold text-gray-300">Solution:</h2>
+            <div id="solution" class="mt-4 bg-gray-800 p-4 rounded text-gray-200"></div>
+        </div>
+    </main>
+
+    <footer class="w-full bg-gray-800 text-white text-center py-4 mt-auto">
+        <p>© 2024 Linear Algebra Calculator. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
